@@ -1,4 +1,22 @@
 {
+  "name": "@gamebridgeai/ts_serialize",
+  "version": "v2.1.0",
+  "description": "A zero dependency library for serializing data.",
+  "exports": {
+    ".": "./mod.ts"
+  },
+  "publish": {
+    "exclude": [
+      ".github",
+      ".vim",
+      ".vscode",
+      ".editorconfig",
+      "_build_npm.ts",
+      "dist",
+      "coverage",
+      "**/*_test.ts"
+    ]
+  },
   "imports": {
     "@deno/dnt": "jsr:@deno/dnt@^0.42.1",
     "@std/assert": "jsr:@std/assert@^1.0.13",

@@ -90,11 +90,12 @@ try {
         "deno",
       ],
     },
+    postBuild() {
+      Deno.copyFileSync("LICENSE", `${flags.o}/LICENSE`);
+      Deno.copyFileSync("README.md", `${flags.o}/README.md`);
+      Deno.copyFileSync("CHANGELOG.md", `${flags.o}/CHANGELOG.md`);
+    },
   });
-
-  await Deno.copyFile("LICENSE", `${flags.o}/LICENSE`);
-  await Deno.copyFile("README.md", `${flags.o}/README.md`);
-  await Deno.copyFile("CHANGELOG.md", `${flags.o}/CHANGELOG.md`);
 } catch (e) {
   const { message } = e instanceof Error ? e : { message: `${e}` };
   printHelpText(message);
